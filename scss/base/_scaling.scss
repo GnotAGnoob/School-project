@@ -1,0 +1,14 @@
+
+:root{
+    @include min_MediaQuery(breakpoint(sm)){
+        --site-padding-x: 8vw;
+        --text-base-size: .45rem;
+    }
+    @include min_MediaQuery(breakpoint(md)){
+        --text-base-size: .5rem;
+        --space-unit: 1.6rem
+    }
+    @include min_MediaQuery(breakpoint(md)){
+        --site-padding-x: 10vw;
+    }
+}

@@ -1,0 +1,31 @@
+.site-footer{
+
+    &_top{
+        border-top: var(--border-bw-300);
+        padding-top: var(--space-md);
+        padding-bottom: var(--space-sm);
+    }
+
+    &_bottom{
+        background-color: var(--clr-primary);
+        @include padding_y(var(--space-md));
+        color: var(--text-secondary);
+    }
+
+    &_links{
+        @include flex(column, center, center, var(--space-xxs));
+
+        @include min_mq(sm){
+            @include flex(row, flex-start, $gap:var(--space-lg));
+
+            &--big{
+                flex-grow: 2;
+                margin-left: var(--space-xl);
+            }
+        }
+    }
+
+    &_title{
+        font-weight: 600;
+    }
+}

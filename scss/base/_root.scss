@@ -1,0 +1,40 @@
+:root{
+    //breakpoints declaration
+    @each $bp , $val in $breakpoints {
+        --bp-#{$bp}: #{$val};
+    }
+
+    //color declaration
+    @each $color , $shades in $colors {
+        @each $shade , $value in $shades {
+            @if $shade == 500{
+                --clr-#{$color}: #{$value};
+            }@else{
+                --clr-#{$color}-#{$shade}: #{$value};
+            }
+        }
+    }
+
+    //spacing declaration
+    @each $space , $val in $spacings {
+        --space-#{$space}: calc(#{$val} * var(--space-unit));
+    }
+
+    //font sizes declaration
+    @for $i from 1 through length($spacings) {
+        $value: nth(nth($spacings, $i),1);
+        $calc:0;
+        @if $i == 1{
+            $calc: var(--text-base-size);
+        }@else{
+            $value-prev: nth(nth($spacings, $i - 1),1);
+            $calc: calc(var(--text-#{$value-prev}) * var(--text-scale-ratio));
+        }
+        --text-#{$value}: #{$calc};       
+    }
+
+    //declare all other variables
+    @each $var,$val in $variables {
+        #{$var}: #{$val};
+    }
+}

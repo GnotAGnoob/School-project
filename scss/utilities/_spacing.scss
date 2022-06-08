@@ -1,0 +1,22 @@
+.site-padding{
+    padding-inline: (var(--site-side-padding));
+    width: 100%;
+}
+
+.no-site-side-padding{
+    padding:0;
+}
+
+.no-children-top-margin{
+    @extend %no_children_top_margin;
+}
+
+.no-margin{
+    margin:0;
+}
+
+@each $space, $val in $spacings {
+    .gap-#{$space}{
+        --gap: var(--space-#{$space});
+    }       
+}

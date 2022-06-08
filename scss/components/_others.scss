@@ -1,0 +1,56 @@
+//FIGURE
+
+.figure {
+  position: relative;
+  line-height: 0;
+
+  &_caption {
+    padding: var(--space-xs) var(--space-md);
+    color: var(--text-secondary);
+    font-size: var(--a-size);
+    background-color: var(--clr-primary-600);
+    line-height: 1.35;
+    width: 100%;
+    margin: 0;
+
+    @include min_mq(md) {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: var(--clr-primary-opacity);
+    }
+  }
+}
+
+//CONTACTS
+
+.contact {
+  &s {
+    &_item {
+      margin-top: var(--space-xxs);
+      line-height: 1;
+
+      &s {
+        @include flex(column, $align-items: flex-start);
+      }
+    }
+
+    &_contact {
+      @include flex(column, $gap: -0.2rem);
+
+      @include max_mq(xs) {
+        &:not(:first-child) {
+          margin-top: var(--space-md);
+        }
+      }
+
+      @include min_mq(xs) {
+        @include flex(row, flex-start);
+      }
+    }
+
+    &_address {
+      font-style: normal;
+    }
+  }
+}

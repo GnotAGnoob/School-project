@@ -1,0 +1,71 @@
+.detail{
+    max-width: 80ch;
+    @include flex(column,flex-start,flex-start);
+
+    &_img{
+        max-width: 100%;
+    }
+
+    &_text{
+        align-self: center;
+    }
+    
+    &_title{
+        font-size: var(--text-xxl);
+    }
+
+    &_footer{
+        margin-top: var(--space-lg);
+    }
+}
+
+.footer-info{
+    @include flex(row, flex-start, baseline, var(--space-md));
+
+    &_text{
+        font-size: var(--a-size);
+        font-family: var(--font-secondary);
+        font-weight: 700;
+        @include hover(color,var(--clr-accent-1),var(--clr-accent-1-600));
+    }
+}
+
+
+
+.comment{
+    //coments
+    &s{
+        @include flex(column, flex-start, flex-start, var(--space-lg));
+        margin-top: var(--space-xxl);
+        max-width: 90ch;
+
+        &_create{
+            @include flex(column, flex-start, flex-start, var(--space-xs));
+            width: 100%;
+        }
+    
+        &_input{
+            width: 100%;
+            resize: vertical;
+        }
+    
+        &_btn{
+            align-self: flex-end;
+        }
+    }
+
+    &_header{
+        @include flex(row,flex-start,center);
+    }
+
+    &_user{
+        font-weight: bold;
+        font-size: var(--p-size);
+        font-family: var(--font-secondary);
+        color: var(--text-primary);
+    }
+
+    &_text{
+        --siblings-margin-y: var(--space-xxs);
+    }
+}

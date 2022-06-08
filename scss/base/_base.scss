@@ -1,0 +1,39 @@
+//general/global css
+
+body{
+    background-color: var(--clr-bw-0);
+}
+
+* + *{
+    margin-top: var(--siblings-margin-y);
+}
+
+//shows when selecting text with mouse
+::selection{
+    @include text_color_all(var(--text-secondary), var(--clr-primary-400));
+    fill:var(--text-secondary);
+}
+
+.anchor{
+    display: block;
+    position: relative;
+    visibility: hidden;
+    margin: 0;
+}
+
+.section-margin{
+    margin-top: var(--section-margin-y);
+}
+
+.main{
+    margin-top: var(--space-xl);
+}
+
+/*google translate*/
+/*
+#google_translate_element2 {display:none!important;}
+#gtranslate-2 {display:none !important;}
+#goog-gt-tt {display:none !important;}
+.goog-te-banner-frame {display:none !important;}
+.goog-te-menu-value:hover {text-decoration:none !important;}
+.goog-text-highlight {background-color:transparent !important;box-shadow:none !important;}*/

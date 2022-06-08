@@ -1,0 +1,11 @@
+.hide-mobile{
+    @include max_MediaQuery($responsiveness){
+        display: none;
+    }
+}
+
+.hide-desktop{
+    @include min_MediaQuery($responsiveness){
+        display: none;
+    }
+}

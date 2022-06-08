@@ -1,0 +1,81 @@
+.card {
+	&_link {
+		@include transition(0.1);
+		@include flex(column, flex-start, flex-start);
+		color: var(--text-primary);
+		--siblings-margin-y: var(--space-xxs);
+		padding: var(--space-md);
+		padding-bottom: var(--space-lg);
+		border-radius: var(--space-xxxs);
+		font-weight: 400;
+
+		&:hover {
+			transform: scale(1.01);
+			box-shadow: 0 0 var(--space-sm) var(--clr-bw-300);
+		}
+	}
+
+	&_img-container {
+		width: 100%;
+		max-height: var(--space-xxxl);
+		overflow: hidden;
+		overflow: clip;
+		line-height: 0;
+
+		@include min_MediaQuery($responsiveness) {
+			max-width: var(--space-xxxxl);
+		}
+	}
+
+	&_img {
+		max-width: 100%;
+		object-fit: cover;
+	}
+
+	&_text {
+		flex-shrink: 0.7;
+		@include min_MediaQuery($responsiveness) {
+			--siblings-margin-x: var(--space-lg);
+		}
+	}
+
+	&_title {
+		text-transform: uppercase;
+		font-size: var(--h2-size);
+	}
+
+	&_header {
+		--siblings-margin-y: var(--space-xxxxs);
+	}
+
+	&_date {
+		color: var(--text-primary-300);
+	}
+
+	&_more {
+		@include flex(row, flex-end, center);
+		font-size: var(--a-size);
+		color: var(--clr-primary);
+		align-self: flex-end;
+	}
+
+	&_arrow {
+		width: var(--space-xxl);
+	}
+
+	&--big {
+		grid-column: 1 / span 2;
+
+		.card_link {
+			@include min_MediaQuery($responsiveness) {
+				@include flex(
+					row,
+					space-between,
+					flex-start,
+					var(--siblings-margin-x)
+				);
+				max-width: unset;
+			}
+		}
+	}
+}

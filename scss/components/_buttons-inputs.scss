@@ -1,0 +1,149 @@
+//BUTTONS GENERAL
+.btn{
+    --btn-color: var(--clr-primary);
+    --btn-hover: var(--clr-primary-600);
+    @include hover(background-color,var(--btn-color),var(--btn-hover));
+    padding: var(--space-xs) var(--space-md);
+    color: var(--text-secondary);
+    border-radius: var(--space-xxxxs);
+    cursor: pointer;
+
+    &--accent-1{
+        --btn-color: var(--clr-accent-1);
+        --btn-hover: var(--clr-accent-1-600);
+    }
+}
+
+
+//INPUTS GENERAL
+::placeholder{
+    @include transition(.3);
+}
+
+.textarea{
+    padding: var(--space-xs);
+    background-color: transparent;
+    border-color: var(--clr-bw-1000);
+    border-radius: var(--space-xxxxs);
+}
+
+//HAMBURGER BUTTON
+.btn-hamburger{
+    --hamburger-clr:var(--clr-primary);
+
+    &:hover{
+        --hamburger-clr:var(--clr-primary-400);
+    }
+
+    &[aria-expanded="true"]{
+        .hamburger_bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger_bar:nth-child(1) {
+            transform: translateY(var(--translate-bar)) rotate(45deg);
+        }
+
+        .hamburger_bar:nth-child(3) {
+            transform: translateY(calc(-1 * var(--translate-bar))) rotate(-45deg);
+        }
+    }
+}
+
+.hamburger_bar{
+    @extend %transition;
+    --height-bar: calc(3 * var(--1px-rem));
+    --margin-bar: var(--space-xxxs);
+    //used in animation
+    --translate-bar: calc(var(--margin-bar) + var(--height-bar));
+    --siblings-margin-y: var(--margin-bar);
+
+    display: block;
+    width: var(--text-lg);
+    height: var(--height-bar);
+    border-radius: calc(2 * var(--1px-rem));
+    background-color: var(--hamburger-clr);
+}
+
+//SEARCH INPUT
+
+.search{
+    border-bottom: var(--border-bw-300);
+    padding-bottom: var(--space-xxxxs);
+
+    &:focus-within{
+        border-width: calc(2 * var(--1px-rem));
+        border-color: var(--clr-primary);
+    }
+
+    &_input{
+        @include transition(.3);
+        width: 100%;
+        
+        &:focus-visible{
+            outline: none;
+        }
+    }
+
+    &_button{
+        @include hover();
+    }
+
+    &--secondary{
+        border-color: var(--clr-bw-100);
+
+        &:focus-within{
+            border-color: var(--text-secondary);
+        }
+
+        .search_input{
+            color: var(--text-secondary);
+            width: 100%;
+        }
+
+        ::placeholder{
+            color: var(--clr-bw-100);
+        }
+
+        .search_button{
+            color: var(--text-secondary);
+        }
+    }
+}
+
+//CUSTOM CHECKBOXES
+
+.custom-checkbox{
+    cursor: pointer;
+    color: var(--clr-primary);
+    font-weight: normal;
+    @include no_children_top_margin();
+    position: relative;
+
+    &_checked{
+        display: none;
+    }
+
+    &_checker{
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        min-width: unset;
+        z-index: -1;     
+
+        &:focus-visible{
+            opacity: 1;
+        }
+
+        &:checked{
+            ~.custom-checkbox_unchecked{
+                display: none;
+            }
+
+            ~.custom-checkbox_checked{
+                display: inline-block;
+            }
+        }
+    }
+}

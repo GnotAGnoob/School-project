@@ -1,0 +1,44 @@
+@import
+  'abstracts/breakpoints',
+  'abstracts/spacings',
+  'abstracts/fonts',
+  'abstracts/colors',
+  'abstracts/mixins',
+  'abstracts/keyframes',
+  'abstracts/animations',
+  'abstracts/other-variables';
+
+@import
+  'base/root',
+  'base/reset',
+  'base/font-face',
+  'base/typography',
+  'base/base',
+  'base/scrollbar',
+  'base/scaling';
+
+@import
+  'components/buttons-inputs',
+  'components/cards',
+  'components/articles',
+  'components/others',
+  'components/slider';
+
+@import
+  'layouts/header',
+  'layouts/footer',
+  'layouts/layouts';
+
+@import
+  'utilities/alignment',
+  'utilities/spacing',
+  'utilities/flex',
+  'utilities/grid',
+  'utilities/visibility',
+  'utilities/visual',
+  'utilities/container',
+  'utilities/other',
+  'utilities/animation';
+
+@import
+  'themes/theme';

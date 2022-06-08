@@ -1,0 +1,80 @@
+.layout-main{
+    $layout-breakpoint: breakpoint(lg);
+    @include flex(column,space-between,flex-start,var(--section-margin-y));
+
+    @include min_MediaQuery($layout-breakpoint){
+        @include flex(row,space-between,flex-start, var(--siblings-margin-x));
+        --siblings-margin-x: var(--space-md);
+    }
+
+    &_item{
+        width: 100%;
+
+        @include min_MediaQuery($layout-breakpoint){
+            --siblings-margin-x: var(--space-md);
+        }
+
+        &--big{
+            flex-shrink: .5;
+        }
+    }
+
+    &_separator{
+        align-self: center;
+        background-color: var(--clr-bw-300);
+
+        @include max_MediaQuery($layout-breakpoint){
+            width: 90%;
+            height: var(--1px-rem);
+        }
+
+        @include min_MediaQuery($layout-breakpoint){
+            width: var(--1px-rem);
+            align-self: stretch;
+            flex-shrink: 0;
+            @include padding_y(var(--space-md));
+            --siblings-margin-x: var(--space-md);
+        }
+    }
+}
+
+.articles-main{
+    --siblings-margin-y: var(--space-sm);
+    @include max_MediaQuery($responsiveness){
+        @include flex(column,flex-start,center);
+    }
+
+    @include min_MediaQuery($responsiveness){
+        @include no_children_top_margin();
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-flow: row;
+        gap: var(--gap, var(--space-md));
+    }
+
+    &_title{
+        align-self: flex-start;
+    }
+}
+
+.articles-aside{
+    @include flex(column, flex-start,center);
+
+    &_title{
+        align-self: flex-start;
+    }
+
+    &_inner{
+        @include min_MediaQuery($responsiveness){
+            @include no_children_top_margin();
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-auto-flow: row;
+            gap: var(--gap, var(--space-md));
+        }
+
+        @include min_mq(lg){
+            @include flex(column, flex-start,center);
+        }
+    }
+}

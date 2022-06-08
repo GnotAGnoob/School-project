@@ -1,0 +1,19 @@
+$variables: map-merge($variables,(
+    // body font size
+    --text-base-size: 0.4rem,
+    // type scale
+    --text-scale-ratio: 1.20,
+
+    //VARIABLES FOR THIS SITE
+    --font-primary: (Open Sans, Helvetica, sans-serif),
+    --font-secondary: (Roboto, Helvetica, sans-serif),
+
+    //text-sizes
+    --p-size: var(--text-sm),
+    --h2-size: var(--text-lg),
+    --h3-size: var(--text-md),
+    --a-size: var(--text-xs),
+    --nav-size: var(--text-xxs),
+    //important for this to be in em
+    --letter-spacing: 0.35em
+));

@@ -1,0 +1,13 @@
+//forces the element to be its minimum width
+.min-content{
+    max-width: min-content;
+}
+
+.stop-scrolling {
+    overflow-y: hidden;
+    overflow-y: clip;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}

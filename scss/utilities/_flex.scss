@@ -1,0 +1,20 @@
+//always in column
+.flex-column{
+    @include flex(column,flex-start,flex-start);
+}
+
+//always stays row
+.flex-row{
+    @extend %flex;
+}
+
+//on mobile in column, on desktop in row
+.flex-resp{
+    @include max_MediaQuery($responsiveness){
+        @include flex(column,flex-start,flex-start);
+    }
+
+    @include min_MediaQuery($responsiveness){
+        @include flex(row,space-between,center,var(--siblings-x-margin));
+    }
+}
